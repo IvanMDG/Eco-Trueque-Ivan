@@ -14,4 +14,5 @@ app.use('/api/solicitudes', require('./rutas/solicitudes'));
 app.use('/api/quiz',     require('./rutas/quiz'));
 app.use('/api/stats',     require('./rutas/stats'));
 
-app.listen(3000, () => console.log('Eco-Trueque listo en http://localhost:3000'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Eco-Trueque listo en el puerto ${PORT}`));
