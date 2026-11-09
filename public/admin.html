@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perfil administrador · Eco-Trueque</title><link rel="stylesheet" href="css/estilos.css">
+<style>
+.admin-card{max-width:760px;margin:0 auto;background:#fff;border:1px solid #ddd0ee;border-radius:22px;padding:2rem;box-shadow:0 12px 35px #231a3310}
+.admin-hero{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}.admin-hero img{width:140px;height:140px;object-fit:cover;border-radius:50%;border:5px solid #e2f1e4}
+.admin-card label{display:block;font-weight:650;margin:.9rem 0 .3rem}.admin-card input,.admin-card textarea{width:100%;padding:.8rem;border:1px solid #c9d8cc;border-radius:10px;font:inherit}.admin-card textarea{min-height:100px}
+.admin-help{background:#fff7dd;padding:1rem;border-radius:12px;color:#594718;margin-top:1.2rem}
+</style></head><body>
+<header class="banner portada-admin"><nav id="menu"></nav><h1>Perfil de administración</h1><p>Personaliza el perfil de presentación de Eco-Trueque.</p></header>
+<main><section class="admin-card"><div class="admin-hero"><img src="img/perfil/perfil-admin.jpeg" alt="Foto de perfil del administrador"><div><h2 id="vista-nombre">Administrador Eco-Trueque</h2><p id="vista-descripcion">Cuidando el ambiente y conectando a la comunidad.</p><span class="etiqueta">Perfil de demostración</span></div></div>
+<form id="form-admin"><label for="nombre">Nombre para mostrar</label><input id="nombre" maxlength="70" value="Administrador Eco-Trueque" required>
+<label for="descripcion">Descripción</label><textarea id="descripcion" maxlength="300">Cuidando el ambiente y conectando a la comunidad.</textarea>
+<button class="boton" type="submit" style="margin-top:1rem">Guardar cambios en este navegador</button></form>
+<div class="admin-help"><strong>Importante:</strong> esta página guarda el nombre y la descripción en este navegador. Aún no es un inicio de sesión seguro ni concede permisos administrativos en el servidor.</div>
+</section></main><footer id="pie"></footer><script src="js/comun.js"></script><script>
+const form=document.querySelector('#form-admin'), nombre=document.querySelector('#nombre'), descripcion=document.querySelector('#descripcion');
+function pintar(){document.querySelector('#vista-nombre').textContent=nombre.value;document.querySelector('#vista-descripcion').textContent=descripcion.value; }
+try{const p=JSON.parse(localStorage.getItem('ecoTruequeAdminPerfil')||'{}');if(p.nombre)nombre.value=p.nombre;if(p.descripcion)descripcion.value=p.descripcion;}catch(e){}
+pintar();form.addEventListener('submit',e=>{e.preventDefault();localStorage.setItem('ecoTruequeAdminPerfil',JSON.stringify({nombre:nombre.value.trim(),descripcion:descripcion.value.trim()}));pintar();alert('Perfil guardado en este navegador.');});
+</script></body></html>

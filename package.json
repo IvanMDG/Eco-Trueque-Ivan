@@ -1,0 +1,13 @@
+{
+  "name": "eco-trueque",
+  "version": "2.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7"
+  }
+}

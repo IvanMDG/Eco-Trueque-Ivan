@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Impacto y Reciclaje · Eco-Trueque</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="banner portada-reciclar">
+    <nav id="menu"></nav>
+    <div class="portada-aprende">
+      <span class="mini-etiqueta" style="background:#d7efdc;color:#185333">4ª R · Transformación de Residuos</span>
+      <h1>Calculadora de Equivalencias y Reciclaje</h1>
+      <p>Transforma los kilos en impacto real: descubre cuánta agua, energía y árboles salvas al reciclar correctamente.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- SIMULADOR DE EQUIVALENCIAS EN VIVO -->
+    <section class="tarjeta-simulador-equiv">
+      <div class="simulador-head">
+        <span class="mini-etiqueta">Simulador en tiempo real ⚡</span>
+        <h2>¿Cuánto aporta tu reciclaje?</h2>
+        <p>Selecciona un material e ingresa los kilos aproximados para ver tu impacto ambiental positivo traducido a métricas reales.</p>
+      </div>
+
+      <div class="simulador-controles">
+        <div class="control-box">
+          <label for="sim-material">Material a reciclar:</label>
+          <select id="sim-material">
+            <option value="papel">📄 Papel y Cuadernos</option>
+            <option value="carton">📦 Cartón limpio</option>
+            <option value="plastico" selected>🧴 Plásticos (PET / PEAD)</option>
+            <option value="vidrio">🍾 Vidrio (Frascos y Botellas)</option>
+            <option value="latas">🥫 Latas de Aluminio</option>
+          </select>
+        </div>
+
+        <div class="control-box">
+          <label for="sim-kg">Cantidad en Kilos (kg):</label>
+          <div style="display:flex;gap:.5rem;align-items:center">
+            <input type="number" id="sim-kg" value="3.5" min="0.1" step="0.5" style="max-width:140px">
+            <button type="button" class="btn-preset" data-kg="1">1 kg</button>
+            <button type="button" class="btn-preset" data-kg="5">5 kg</button>
+            <button type="button" class="btn-preset" data-kg="10">10 kg</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TARJETAS DE RESULTADOS DE IMPACTO -->
+      <div class="equiv-grid" id="equiv-resultados">
+        <div class="equiv-card">
+          <span class="equiv-icon">💧</span>
+          <strong id="eq-agua" class="equiv-val">...</strong>
+          <small>Litros de agua ahorrados</small>
+        </div>
+        <div class="equiv-card">
+          <span class="equiv-icon">💡</span>
+          <strong id="eq-energia" class="equiv-val">...</strong>
+          <small>Horas de foco LED encendido</small>
+        </div>
+        <div class="equiv-card">
+          <span class="equiv-icon">🌳</span>
+          <strong id="eq-arboles" class="equiv-val">...</strong>
+          <small>Árboles preservados / CO2 evitado</small>
+        </div>
+        <div class="equiv-card">
+          <span class="equiv-icon">🧴</span>
+          <strong id="eq-unidades" class="equiv-val">...</strong>
+          <small>Envases equivalentes recuperados</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE REGISTRO -->
+    <section class="seccion-registro-recicla">
+      <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:start">
+        <div>
+          <h2>Registra tu aporte al proyecto</h2>
+          <p style="color:#536c5b">Suma tu aporte al marcador colectivo de la clase o escuela. Al registrar, ganas tu <b>Sello de Reciclaje</b> para el Pasaporte Verde.</p>
+          
+          <form id="formulario" class="form">
+            <input name="persona" id="reg-persona" placeholder="Tu nombre o grupo escolar" required>
+            <select name="material_id" id="material" required></select>
+            <input name="kg" id="reg-kg" type="number" min="0.1" step="0.1" placeholder="Cantidad en Kilos (kg)" required>
+            <button class="boton sol" style="width:100%">Registrar y Sumar Impacto</button>
+          </form>
+
+          <div id="toast-recicla" class="toast" style="display:none;margin-top:1rem"></div>
+        </div>
+
+        <!-- REGLA DE ORO DE RECICLAJE -->
+        <div class="tarjeta-regla-oro">
+          <h3>✨ Regla de Oro del Reciclaje</h3>
+          <ul style="padding-left:1.2rem;line-height:1.7;margin:.6rem 0;color:#335340">
+            <li><b>Limpio y sin restos:</b> Enjuaga envases para que no creen hongos o contaminen papel.</li>
+            <li><b>Seco:</b> El agua deteriora el cartón y reduce su capacidad de reciclaje.</li>
+            <li><b>Aplastado:</b> Reduce hasta un 70% el volumen en contenedores y facilita el transporte.</li>
+            <li><b>¡Cuidado con la trampa!:</b> Las servilletas usadas y cajas con grasa van a residuos comunes, no a reciclaje.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACTO COLECTIVO DE LA COMUNIDAD -->
+    <section style="margin-top:2.5rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+        <div>
+          <h2>Lo que lleva nuestra comunidad escolar</h2>
+          <p style="color:#5a6e60;margin-top:0">Totales acumulados por material reciclado.</p>
+        </div>
+        <div id="total-acumulado-badge" class="mini-etiqueta" style="font-size:1rem;padding:.4rem 1rem">Cargando acumulado...</div>
+      </div>
+
+      <div id="totales" class="barras" style="margin-top:1rem"></div>
+    </section>
+  </main>
+
+  <footer id="pie"></footer>
+  <script src="js/comun.js"></script>
+  <script src="js/reciclar.js"></script>
+</body>
+</html>
+

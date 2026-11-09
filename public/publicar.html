@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publicar · Eco-Trueque</title><link rel="stylesheet" href="css/estilos.css"></head>
+<body>
+<header class="banner portada-publicar"><nav id="menu"></nav><h1>Publica un objeto</h1><p>Dale otra vida a lo que ya no usas.</p></header>
+<main><form id="formulario" class="form">
+<input name="titulo" placeholder="¿Qué publicas?" required maxlength="80">
+<input name="descripcion" placeholder="Descripción corta" maxlength="300">
+<select name="categoria_id" id="categoria"></select>
+<select name="erre_id" id="erre" title="¿Qué R practicas?"></select>
+<select name="estado"><option>Nuevo</option><option selected>Buen estado</option><option>Usado</option></select>
+<select name="tipo_oferta" id="tipo"><option value="trueque">Quiero intercambiarlo</option><option value="venta">Quiero venderlo</option><option value="donacion">Quiero donarlo</option></select>
+<input name="a_cambio" id="a_cambio" placeholder="¿Qué quieres a cambio?">
+<input name="precio" id="precio" type="number" min="0" step="0.01" placeholder="Precio en C$" hidden>
+<select name="lugar_id" id="lugar" hidden></select>
+<label class="chk">📷 Foto del objeto (opcional) <input type="file" id="foto" accept="image/*"></label>
+<label>🎥 Video del objeto (opcional)
+  <input
+    type="file"
+    id="videoProducto"
+    name="video"
+    accept="video/*"
+  >
+</label>
+
+<video
+  id="vistaVideo"
+  controls
+  playsinline
+  preload="metadata"
+  style="display:none; width:100%; max-width:450px; border-radius:12px;"
+></video>
+<input name="publicado_por" placeholder="ecotrueque" required>
+<input name="contacto" placeholder="Teléfono o correo" required>
+<label class="chk"><input type="checkbox" required> Pensé si lo necesito o si se puede reparar antes de publicarlo.</label>
+<button>Publicar</button></form></main>
+<footer id="pie"></footer><script src="js/comun.js"></script><script src="js/publicar.js"></script></body></html>

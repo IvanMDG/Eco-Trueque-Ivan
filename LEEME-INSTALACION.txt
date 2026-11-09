@@ -1,0 +1,60 @@
+ECO-TRUEQUE — VERSIÓN ACTUALIZADA
+================================
+
+Incluye las páginas originales, imágenes adjuntas, portadas distintas para secciones y una página de perfil de presentación del administrador.
+
+REQUISITOS
+- Node.js 18 o superior
+- MySQL 8.x (o compatible)
+- Terminal / CMD
+
+INSTALACIÓN EN WINDOWS
+1. Descomprime este ZIP en una carpeta fácil de encontrar.
+2. Abre MySQL Workbench o la consola de MySQL con un usuario que tenga permiso para crear bases de datos.
+3. Ejecuta primero el archivo database/01_estructura.sql.
+4. Ejecuta después database/02_datos_ejemplo.sql.
+   Estos archivos usan la base NUEVA `eco_trueque_nuevo`, separada de la base anterior `eco_trueque`.
+5. Abre CMD en la carpeta del proyecto (la que contiene package.json).
+6. Ejecuta: npm install
+7. Configura la conexión MySQL en CMD antes de iniciar:
+   set DB_HOST=localhost
+   set DB_PORT=3306
+   set DB_USER=root
+   set DB_PASSWORD=TU_CLAVE_REAL
+   set DB_NAME=eco_trueque_nuevo
+   (Sustituye TU_CLAVE_REAL por la contraseña real de MySQL. Si tu usuario no tiene contraseña, deja DB_PASSWORD vacío.)
+8. Ejecuta: npm start
+9. Abre en el navegador: http://localhost:3000
+
+Si usas PowerShell, las variables se establecen así:
+   $env:DB_HOST="localhost"
+   $env:DB_PORT="3306"
+   $env:DB_USER="root"
+   $env:DB_PASSWORD="TU_CLAVE_REAL"
+   $env:DB_NAME="eco_trueque_nuevo"
+   npm start
+
+IMPORTANTE SOBRE LA BASE DE DATOS
+- La base nueva se llama `eco_trueque_nuevo`.
+- No borra la base anterior.
+- Ejecuta los SQL en orden. El archivo de estructura no elimina tablas, para reducir el riesgo de pérdida accidental.
+- El usuario MySQL debe tener permisos para crear base de datos y tablas.
+- Si la base ya existe y ya tiene tablas, no vuelvas a ejecutar el SQL de estructura sin revisar primero.
+
+PERFIL DE ADMINISTRADOR
+- Entra a http://localhost:3000/admin.html o usa “Mi perfil” en el menú.
+- El nombre provisional es “Administrador Eco-Trueque”.
+- Puedes cambiar nombre y descripción. En esta versión se guardan en el almacenamiento local del navegador.
+- Esta página NO es un sistema de autenticación ni de permisos reales. No la uses para proteger funciones sensibles. Para tener un administrador real se necesita añadir login, contraseñas cifradas, sesiones y autorización en la API.
+
+IMÁGENES
+- Las imágenes aportadas están en public/img/referencias/ y public/img/perfil/.
+- Las ilustraciones de respaldo del mercado están en public/img/productos/.
+
+SOLUCIÓN DE PROBLEMAS
+- “Access denied”: revisa usuario y contraseña MySQL.
+- “Unknown database”: importa 01_estructura.sql antes de los datos.
+- “ECONNREFUSED”: verifica que el servicio MySQL esté iniciado.
+- “Cannot find module”: ejecuta npm install dentro de la carpeta que contiene package.json.
+
+Este ZIP no puede incluir la contraseña de tu MySQL; debes introducir la tuya en tu equipo.

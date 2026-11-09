@@ -1,0 +1,1375 @@
+/* ===== Colores ===== */
+:root{--bg:#f7f3fc;--ink:#231a33;--morado:#4a2c7a;--morado2:#6d44a8;--sol:#f0b429;--borde:#ddd0ee;--blanco:#fff}
+
+/* ===== Base ===== */
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+main{max-width:1100px;margin:auto;padding:2rem 6vw}
+h2{font-size:1.8rem;margin:0 0 .6rem}
+
+/* ===== Cabecera con imagen de fondo y menú ===== */
+.banner{color:#fff;padding:0 6vw 2.5rem;background:linear-gradient(#4a2c7ad1,#4a2c7ad1),var(--morado) url("../img/hojas.svg") center/cover}
+.banner.ondas{background-image:linear-gradient(#4a2c7ad1,#4a2c7ad1),url("../img/ondas.svg")}
+.banner h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;max-width:20ch;margin:1.5rem 0 .6rem}
+.banner p{font-size:1.1rem;max-width:50ch}
+#menu{display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center;padding:1rem 0}
+#menu b{margin-right:auto;font-size:1.2rem}
+#menu a{color:#fff;text-decoration:none;padding:.2rem 0;border-bottom:3px solid transparent}
+#menu a.activo,#menu a:hover{border-color:var(--sol)}
+
+/* ===== Cifras y franja de las 4 R ===== */
+.stats{display:flex;flex-wrap:wrap;gap:2rem;margin-top:1.6rem}
+.stats div{border-left:4px solid var(--sol);padding-left:.8rem}.stats b{display:block;font-size:2rem}
+.rs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));background:var(--sol)}
+.rs a{padding:1.2rem 1.5rem;border-right:1px solid #0002;color:var(--ink);text-decoration:none}
+.rs a:hover{background:#f6c85a}.rs h3{margin:0}.rs p{margin:.3rem 0 0}
+
+/* ===== Tarjetas, formularios y botones ===== */
+.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;margin:1rem 0}
+.item{background:var(--blanco);border:1px solid var(--borde);border-radius:10px;padding:1rem}
+.item h4{margin:.2rem 0}.item small{color:#6a5a80}
+.tag{display:inline-block;padding:.1rem .6rem;border-radius:99px;font-size:.8rem;font-weight:600;background:#e6dcf3}
+.tag.venta{background:#fde7a8}.tag.donacion{background:#cde8f2}
+.filtros,.form{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+input,select,textarea{flex:1 1 180px;padding:.6rem;border:1px solid var(--borde);border-radius:6px;font:inherit;background:var(--blanco)}
+.chk{flex:1 1 100%;display:flex;gap:.6rem;align-items:center}.chk input{flex:0}
+.boton,button{display:inline-block;background:var(--morado);color:#fff;border:0;padding:.65rem 1.2rem;border-radius:6px;font:inherit;cursor:pointer;text-decoration:none}
+.boton:hover,button:hover{background:var(--morado2)}
+.item button{margin:.6rem .3rem 0 0;padding:.4rem .8rem;font-size:.9rem}
+:focus-visible{outline:3px solid var(--sol);outline-offset:2px}
+
+/* ===== Barras de reciclaje y pie ===== */
+.barras div{display:flex;align-items:center;gap:.6rem;margin:.3rem 0}
+.barras span{width:80px}.barras i{display:block;height:16px;background:var(--morado);border-radius:4px}
+footer{text-align:center;padding:2rem;color:#6a5a80}
+
+/* ===== Página de inicio: portada con ilustración ===== */
+.portada{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
+.portada img{width:100%;max-width:380px;justify-self:center}
+.boton.sol{background:var(--sol);color:var(--ink);font-weight:600}
+.boton.sol:hover{background:#f6c85a}
+.banda{background:var(--blanco);padding:2.5rem 6vw}
+.pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;max-width:1100px;margin:auto}
+.pasos div{border-top:4px solid var(--sol);padding-top:.8rem}.pasos b{font-size:2.4rem;color:var(--morado2)}
+.tarjetas-r{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.2rem 0}
+.tarjetas-r a{background:var(--blanco);border:1px solid var(--borde);border-radius:14px;padding:1.2rem;text-align:center;color:var(--ink);text-decoration:none;transition:transform .2s}
+.tarjetas-r a:hover{transform:translateY(-4px);border-color:var(--morado2)}
+.tarjetas-r img{width:90px}.tarjetas-r h3{margin:.6rem 0 .2rem}
+.tag.erre{background:#ece4f7}
+
+/* ===== Página "Las 4 R": bloques con imagen ===== */
+.bloque-r{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;align-items:center;padding:1.6rem 0;border-bottom:1px solid var(--borde)}
+.bloque-r:nth-child(even){direction:rtl}.bloque-r:nth-child(even)>*{direction:ltr}
+.bloque-r img{width:130px}.bloque-r h2{margin:0}
+.video{background:var(--morado);color:#fff;border-radius:14px;padding:2rem;text-align:center;margin:1.5rem 0}
+.video iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px}
+
+/* ===== Quiz ===== */
+.pregunta{background:var(--blanco);border:1px solid var(--borde);border-radius:12px;padding:1rem 1.2rem;margin:1rem 0}
+.pregunta h3{margin:0 0 .6rem}.pregunta button{display:block;width:100%;text-align:left;margin:.4rem 0;background:#ece4f7;color:var(--ink)}
+.pregunta button:hover:not(:disabled){background:#ddd0ee}
+.pregunta button.bien{background:#9bd8a8}.pregunta button.mal{background:#f2b8b5}
+#resultado{font-size:1.4rem;font-weight:700;color:var(--morado)}
+@media(max-width:700px){.portada{grid-template-columns:1fr}.bloque-r{grid-template-columns:90px 1fr}.bloque-r img{width:80px}}
+
+/* ===== Tienda: pestañas, tarjetas con foto, favoritos y ventana de detalle ===== */
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.tabs button{background:var(--blanco);color:var(--morado);border:2px solid var(--borde);border-radius:99px;padding:.45rem 1.1rem}
+.tabs button.on{background:var(--morado);color:#fff;border-color:var(--morado)}
+.tienda{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.2rem;margin:1rem 0}
+.prod{display:block;background:#fff;border:1px solid var(--borde);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s}
+a.prod{color:inherit;text-decoration:none}
+.prod:hover{transform:translateY(-4px);box-shadow:0 8px 20px #4a2c7a22}
+.foto{position:relative;aspect-ratio:10/7;background:#eee}.foto img{width:100%;height:100%;object-fit:cover;display:block}
+.cinta{position:absolute;top:.6rem;left:.6rem;padding:.2rem .7rem;border-radius:99px;font-size:.8rem;font-weight:700;background:#fff}
+.cinta.venta{background:var(--sol)}.cinta.donacion{background:#c9a8f0}.cinta.trueque{background:#bfe3d0}
+.corazon{position:absolute;top:.5rem;right:.5rem;width:2.2rem;height:2.2rem;padding:0;border-radius:50%;background:#fff;color:#b9a8d0;font-size:1.2rem}
+.corazon:hover{background:#fff}.corazon.on{color:#d6336c}
+.prod-info{padding:.8rem 1rem 1rem}.prod-info h4{margin:0 0 .2rem}
+.precio{font-weight:700;color:var(--morado);font-size:1.1rem}
+.quien{display:flex;align-items:center;gap:.5rem;margin-top:.6rem;font-size:.9rem;color:#6a5a80}
+.avatar{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:50%;color:#fff;font-weight:700}
+/* ===== Ventana Modal (Tienda / Detalle) ===== */
+.modal{position:fixed;inset:0;background:rgba(18,34,25,0.72);backdrop-filter:blur(4px);display:grid;place-items:center;padding:1rem;z-index:100}
+.modal[hidden]{display:none}
+.modal-caja{
+  position:relative;
+  background:#fff;
+  border-radius:22px;
+  max-width:850px;
+  width:100%;
+  max-height:90vh;
+  display:grid;
+  grid-template-columns:320px 1fr;
+  overflow:hidden;
+  box-shadow:0 24px 70px rgba(18,45,30,0.35);
+  border:1px solid #dce8dc;
+}
+.modal-cerrar-x{
+  position:absolute;
+  top:.85rem;
+  right:.85rem;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid #d5e5d6;
+  background:#f0f7f1;
+  color:#245b45;
+  font-size:1.35rem;
+  line-height:1;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  z-index:20;
+  transition:all .18s ease;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+.modal-cerrar-x:hover{
+  background:#245b45;
+  color:#fff;
+  transform:scale(1.08);
+}
+.modal-foto-col{
+  background:#eef3eb;
+  height:100%;
+  max-height:90vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.modal-foto-col img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.modal-texto{
+  padding:1.6rem 1.8rem;
+  max-height:90vh;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:.85rem;
+  scrollbar-width:thin;
+  scrollbar-color:#c8dac9 transparent;
+}
+.modal-texto::-webkit-scrollbar{
+  width:6px;
+}
+.modal-texto::-webkit-scrollbar-thumb{
+  background:#c8dac9;
+  border-radius:6px;
+}
+
+/* Etiquetas y cabecera del modal */
+.modal-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  align-items:center;
+}
+.tag.gris{
+  background:#edf3ed;
+  color:#43614a;
+}
+.modal-titulo{
+  font-size:1.45rem;
+  font-weight:750;
+  line-height:1.25;
+  color:#1b4533;
+  margin:0;
+}
+.modal-precio-destacado{
+  display:inline-block;
+  align-self:flex-start;
+  font-size:1.15rem;
+  font-weight:750;
+  color:#245b45;
+  background:#eaf4eb;
+  padding:.35rem .85rem;
+  border-radius:99px;
+  border:1px solid #cce2ce;
+}
+.modal-desc{
+  font-size:.95rem;
+  line-height:1.55;
+  color:#3b5042;
+  margin:0;
+}
+
+/* Caja de vendedor en el modal */
+.modal-vendedor-box{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  padding:.65rem .85rem;
+  background:#f8faf7;
+  border:1px solid #e3ede3;
+  border-radius:12px;
+}
+.modal-vendedor-info{
+  display:flex;
+  flex-direction:column;
+  line-height:1.25;
+}
+.modal-vendedor-info small{
+  font-size:.76rem;
+  color:#6d8474;
+}
+.modal-vendedor-info a{
+  font-weight:700;
+  color:#245b45;
+  text-decoration:none;
+}
+.modal-vendedor-info a:hover{
+  text-decoration:underline;
+}
+
+/* Botones principales de acción */
+.modal-botones-principales{
+  display:flex;
+  gap:.6rem;
+  flex-wrap:wrap;
+}
+.modal-btn-accion{
+  flex:1 1 auto;
+  background:#245b45;
+  color:#fff;
+  padding:.65rem 1.2rem;
+  font-weight:650;
+  border-radius:999px;
+  border:none;
+}
+.modal-btn-accion:hover{
+  background:#367a5d;
+}
+.modal-btn-pregunta{
+  flex:1 1 auto;
+}
+
+/* Formulario desplegable de solicitud/pregunta */
+.modal-form-solicitud{
+  background:#f5f9f5;
+  border:1.5px solid #cee0d0;
+  border-radius:14px;
+  padding:1rem 1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.65rem;
+  margin:.2rem 0;
+  box-shadow:0 4px 14px rgba(22,60,35,0.06);
+  animation:fadeInModalForm .2s ease-out;
+}
+@keyframes fadeInModalForm{
+  from{opacity:0;transform:translateY(-4px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.modal-form-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #dce8dd;
+  padding-bottom:.4rem;
+}
+.modal-form-head strong{
+  color:#245b45;
+  font-size:.95rem;
+}
+.btn-cancelar-form{
+  background:transparent;
+  border:none;
+  color:#6a8271;
+  font-size:1.1rem;
+  cursor:pointer;
+  padding:0 .3rem;
+  border-radius:4px;
+}
+.btn-cancelar-form:hover{
+  color:#c92a2a;
+  background:#eef2ee;
+}
+.modal-campo{
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+}
+.modal-campo label{
+  font-size:.8rem;
+  font-weight:650;
+  color:#386047;
+}
+.modal-campo input,
+.modal-campo textarea{
+  width:100%;
+  flex:none;
+  padding:.55rem .75rem;
+  font-size:.9rem;
+  border:1px solid #c7d8c9;
+  border-radius:8px;
+  background:#fff;
+  font-family:inherit;
+  box-sizing:border-box;
+  transition:border-color .18s,outline .18s;
+}
+.modal-campo input:focus,
+.modal-campo textarea:focus{
+  border-color:#2e7354;
+  outline:2px solid #91c99f;
+}
+.modal-campo textarea{
+  min-height:60px;
+  max-height:110px;
+  resize:vertical;
+}
+.modal-form-foot{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:.1rem;
+}
+.modal-btn-enviar{
+  width:100%;
+  background:#f2c65c!important;
+  color:#263b2e!important;
+  font-weight:750!important;
+  padding:.65rem 1.2rem;
+  border-radius:8px!important;
+  border:none;
+  cursor:pointer;
+  font-size:.95rem;
+  box-shadow:0 4px 12px rgba(242,198,92,0.35);
+  transition:background .18s,transform .18s;
+}
+.modal-btn-enviar:hover{
+  background:#ffda78!important;
+  transform:translateY(-1px);
+}
+
+/* Botones secundarios (contacto, entregado, cerrar) */
+.modal-botones-secundarios{
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+  align-items:center;
+  padding-top:.4rem;
+  border-top:1px dashed #dbe6dc;
+}
+.modal-botones-secundarios button{
+  padding:.45rem .9rem;
+  font-size:.86rem;
+  border-radius:999px;
+}
+.boton.suave{
+  background:#eef5ed;
+  color:#2c684c;
+  border:1px solid #d4e5d5;
+}
+.boton.suave:hover{
+  background:#e0eedf;
+}
+.contacto-mostrado{
+  background:#eef5ed;
+  border:1px solid #cde0cf;
+  border-radius:10px;
+  padding:.55rem .9rem;
+  font-size:.88rem;
+  color:#23583f;
+}
+
+/* Consultas en el modal */
+.modal-consultas-sec{
+  margin-top:.4rem;
+  border-top:1px solid #e1ebe1;
+  padding-top:.7rem;
+}
+.modal-consultas-sec h4{
+  font-size:.92rem;
+  color:#245b45;
+  margin:0 0 .55rem;
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+}
+.modal-consultas-lista{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  max-height:190px;
+  overflow-y:auto;
+  padding-right:.25rem;
+}
+.consulta-card{
+  display:flex;
+  gap:.6rem;
+  background:#f8faf8;
+  border:1px solid #e4ede4;
+  border-radius:10px;
+  padding:.55rem .75rem;
+  font-size:.87rem;
+}
+.consulta-card .avatar{
+  flex-shrink:0;
+  width:1.8rem;
+  height:1.8rem;
+  font-size:.85rem;
+}
+.consulta-body{
+  flex:1;
+  min-width:0;
+}
+.consulta-header{
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  margin-bottom:.2rem;
+  flex-wrap:wrap;
+}
+.consulta-header b{
+  color:#204733;
+}
+.consulta-header .tag{
+  font-size:.72rem;
+  padding:.05rem .45rem;
+}
+.consulta-msg{
+  margin:0;
+  color:#3b4e41;
+  word-break:break-word;
+  line-height:1.35;
+}
+.consultas-vacio{
+  font-size:.84rem;
+  color:#6e8475;
+  background:#f8faf7;
+  padding:.6rem .8rem;
+  border-radius:8px;
+  border:1px dashed #d5e2d6;
+  text-align:center;
+}
+
+.claro{background:#ece4f7;color:var(--morado)}
+.toast{background:#d9f2e3;border:1px solid #9bd8a8;padding:.8rem 1rem;border-radius:10px;margin-bottom:1rem}
+.persona{text-align:center}.persona .avatar{width:3.4rem;height:3.4rem;font-size:1.5rem}
+@media(max-width:768px){
+  .modal-caja{grid-template-columns:1fr;max-height:92vh;overflow-y:auto}
+  .modal-foto-col{height:210px;max-height:210px}
+  .modal-texto{max-height:none;overflow-y:visible;padding:1.3rem}
+}
+
+/* ===== Quiz: avance, explicación y certificado ===== */
+.avance{background:var(--borde);height:12px;border-radius:99px;overflow:hidden}
+.avance i{display:block;height:100%;width:0;background:var(--sol);transition:width .3s}
+.explica{margin:.6rem 0 0;font-size:.95rem;color:var(--morado)}
+.certificado{border:6px double var(--morado);background:#fff;border-radius:12px;text-align:center;padding:2rem;margin:1.5rem 0}
+.certificado h1{color:var(--morado);margin:.4rem 0}
+@media print{body *{visibility:hidden}.certificado,.certificado *{visibility:visible}.certificado{position:absolute;inset:0;margin:auto;height:fit-content}}
+
+/* ===== ECO-TRUEQUE · presentación final ===== */
+:root{
+ --bg:#f5f8f2;--ink:#20352b;--morado:#245b45;--morado2:#367a5d;
+ --sol:#e9b949;--borde:#dce8dc;--blanco:#fff;
+}
+body{background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",system-ui,sans-serif}
+.banner{background:linear-gradient(115deg,rgba(19,67,48,.96),rgba(37,103,72,.82)),url("../img/hojas.svg") center/cover}
+.banner.ondas{background-image:linear-gradient(115deg,rgba(19,67,48,.96),rgba(37,103,72,.82)),url("../img/ondas.svg")}
+#menu{gap:1rem;padding:1.15rem 0}
+#menu b{font-size:1.35rem;letter-spacing:-.03em}
+#menu b:before{content:"♻ ";color:#f3c65e}
+#menu a{font-size:.94rem;font-weight:600;padding:.45rem .2rem}
+.banner h1{letter-spacing:-.045em;max-width:17ch}
+.banner p{color:#eff8f0}
+main{max-width:1180px;padding-top:3rem;padding-bottom:3rem}
+h2{letter-spacing:-.035em;color:#214c39}
+.banda{background:#edf4eb;padding:2.8rem 6vw}
+.pasos{gap:1rem}
+.pasos div{background:#fff;border:1px solid #e1eadf;border-radius:18px;padding:1.25rem;box-shadow:0 8px 24px #20452b0b;border-top:4px solid var(--sol)}
+.pasos b{font-size:2rem;color:#347b59}
+.boton,button{border-radius:999px;font-weight:650;transition:transform .18s,box-shadow .18s,background .18s}
+.boton:hover,button:hover{transform:translateY(-1px);box-shadow:0 7px 16px #163b2a20}
+.boton.sol{background:#f2c65c;color:#263b2e}
+.boton.sol:hover{background:#ffda78}
+.tarjetas-r a,.item,.prod{border-radius:18px;box-shadow:0 6px 20px #173d2a0b}
+.tarjetas-r a{border-color:#e1eadf}
+.tarjetas-r a:hover{border-color:#78a88b}
+.tarjetas-r img{width:82px;height:82px}
+.stats{gap:1rem}
+.stats div{flex:1 1 135px;border-left:0;border-radius:14px;background:#ffffff20;padding:.75rem 1rem;color:#fff}
+.stats b{font-size:1.8rem;color:#f5d276}
+footer{background:#eaf2e8;color:#557363;font-size:.9rem}
+.tabs button{border-radius:999px;border-color:#d5e3d6;color:#2a6045}
+.tabs button.on{background:#286548;border-color:#286548}
+.tienda{grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:1.25rem}
+.prod{border-color:#e0e9df}
+.prod:hover{box-shadow:0 14px 30px #214c3920}
+.foto{background:linear-gradient(135deg,#eef5e9,#e1eee4);aspect-ratio:4/3}
+.foto img{object-fit:cover}
+.cinta{box-shadow:0 2px 8px #00000012}
+.cinta.trueque{background:#d5efdc;color:#205d3b}
+.cinta.venta{background:#ffe6a5;color:#654b12}
+.cinta.donacion{background:#e8dcf8;color:#553c7a}
+.prod-info{padding:1rem 1.05rem 1.1rem}
+.prod-info h4{font-size:1.02rem;color:#233d30}
+.precio{color:#286548}
+.quien{color:#718477}
+.avatar{background:#387b59!important}
+.form{background:#fff;border:1px solid #e1eadf;border-radius:20px;padding:1.4rem;box-shadow:0 10px 30px #20452b0b}
+input,select,textarea{border-color:#d7e3d8;border-radius:10px;padding:.75rem}
+input:focus,select:focus,textarea:focus{outline:2px solid #91b99a;border-color:#397d59}
+.tag{background:#e4f0e4;color:#2e6647}
+.tag.venta{background:#fff0c8;color:#705319}
+.tag.donacion{background:#eee4fa;color:#61447e}
+.toast{background:#e5f5e8;border-color:#b6dfbd;color:#245b37}
+.bloque-r{padding:1.8rem 1rem}
+.bloque-r img{background:#fff;border-radius:20px;padding:1rem;box-shadow:0 5px 20px #20452b0b}
+.video{background:linear-gradient(135deg,#245b45,#367a5d);border-radius:20px}
+.persona{border-radius:18px}
+@media(max-width:700px){
+ #menu{gap:.65rem}
+ #menu b{width:100%;margin-bottom:.3rem}
+ #menu a{font-size:.88rem}
+ .banner{padding-bottom:2rem}
+ main{padding:2rem 5vw}
+ .stats div{flex:1 1 40%}
+ .bloque-r{grid-template-columns:78px 1fr;padding:1.2rem 0}
+ .bloque-r img{width:68px}
+}
+
+/* ===== Sección audiovisual de presentación ===== */
+.video-destacado{display:grid;grid-template-columns: .9fr 1.1fr;gap:2rem;align-items:center;margin:2.5rem 0;padding:clamp(1.2rem,3vw,2.3rem);border-radius:24px;background:linear-gradient(135deg,#e8f2e7,#f8f4e7);border:1px solid #d8e7d8}
+.video-destacado h2{font-size:clamp(1.6rem,3vw,2.25rem);margin:.45rem 0}
+.video-destacado p{color:#526b5a}
+.mini-etiqueta{display:inline-block;background:#d6ead8;color:#245b45;font-weight:700;padding:.35rem .8rem;border-radius:99px;font-size:.85rem}
+.video-ayuda{font-size:.9rem;background:#fff;padding:.8rem 1rem;border-radius:12px;border-left:4px solid #e9b949}
+.video-marco{background:#173e2b;border-radius:18px;padding:.65rem;box-shadow:0 14px 35px #173e2b20}
+.video-marco video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#f1f5ed;border-radius:12px}
+.video-marco small{display:block;color:#e9f3e8;text-align:center;padding:.5rem}
+@media(max-width:750px){.video-destacado{grid-template-columns:1fr}}
+
+/* ===== Presentación visual refinada: portada cálida, comunidad y balance ===== */
+body:has(.portada) .banner{background:linear-gradient(105deg,rgba(18,43,32,.78),rgba(29,68,49,.40)),url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=85') center/cover no-repeat}
+body:has(.portada) .portada img{filter:drop-shadow(0 12px 25px #122c1e55);max-width:320px}
+body:has(.portada) .banner h1{max-width:15ch;text-shadow:0 3px 18px #0004}
+body:has(.portada) .banner p{color:#f4f8f1}
+.impacto-combinado{margin:2.8rem 0;padding:clamp(1.3rem,3vw,2.4rem);border-radius:26px;background:linear-gradient(135deg,#fffdf7,#eaf3e8);border:1px solid #dce8dc;box-shadow:0 12px 34px #244b3210}
+.impacto-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}.impacto-head h2{margin:.5rem 0}.impacto-head p{color:#607567;margin:.2rem 0}.impacto-total{display:grid;place-items:center;width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,#2e7653,#75a87d);color:white;box-shadow:0 8px 20px #2e765333}.impacto-total strong{font-size:1.7rem}.impacto-total span{font-size:.7rem;text-align:center;padding:0 .5rem}
+.impacto-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}.impacto-card{padding:1.2rem;background:#fff;border:1px solid #e2eade;border-radius:18px;display:flex;flex-direction:column;gap:.25rem}.impacto-icon{font-size:1.8rem}.impacto-card strong{font-size:1.5rem;color:#245b45}.impacto-card small{color:#718477}.barra-impacto{height:9px;background:#e8eee6;border-radius:20px;overflow:hidden;margin-top:.8rem}.barra-impacto i{display:block;height:100%;border-radius:20px;background:#5c9b70}.barra-impacto.venta i{background:#d7a83c}.barra-impacto.recicla i{background:#6d9cc5}.nota-demo{font-size:.82rem;color:#728477;font-style:italic;margin:.8rem 0}
+.persona-card{cursor:pointer;transition:transform .2s,box-shadow .2s;text-align:left;padding:1.3rem}.persona-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px #234b321a}.foto-perfil{width:76px;height:76px;border-radius:50%;object-fit:cover;border:4px solid #e5f0e4;display:block;margin-bottom:.8rem}.persona-card h3{margin:.3rem 0;color:#245b45}.persona-card p{color:#637668;font-size:.92rem}.mini-stats{display:flex;gap:.6rem;flex-wrap:wrap;margin:.7rem 0}.mini-stats span{font-size:.8rem;background:#edf5eb;padding:.3rem .6rem;border-radius:20px}.persona-card .boton{font-size:.86rem}.perfil-modal-caja{position:relative;background:#fff;border-radius:24px;max-width:650px;width:100%;max-height:90vh;overflow:auto;padding:1.6rem;box-shadow:0 24px 70px #102c1e55}.cerrar-perfil{position:absolute;right:1rem;top:1rem;width:38px;height:38px;padding:0;background:#edf4eb;color:#245b45;font-size:1.5rem}.perfil-hero{display:flex;align-items:center;gap:1rem;padding:.5rem 2.5rem .8rem .2rem}.perfil-hero .foto-perfil{width:100px;height:100px;flex-shrink:0}.perfil-hero h2{margin:.3rem 0}.perfil-hero p{margin:.2rem 0;color:#66796b}.perfil-resumen{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1rem 0}.perfil-resumen div{background:#eff5ed;border-radius:14px;padding:.8rem;text-align:center}.perfil-resumen b{display:block;font-size:1.5rem;color:#245b45}.perfil-resumen small{font-size:.75rem;color:#637668}.perfil-impacto{display:grid;gap:.7rem}.perfil-impacto div{display:grid;grid-template-columns:1fr auto;gap:.3rem;background:#f8faf6;border-radius:10px;padding:.65rem}.perfil-impacto b{color:#245b45}.perfil-impacto i{grid-column:1/-1;display:block;height:7px;background:#69a77a;border-radius:10px}.fallback-avatar{width:76px;height:76px;margin-bottom:.8rem;background:#387b59!important;font-size:2rem}
+@media(max-width:650px){.impacto-grid{grid-template-columns:1fr}.perfil-resumen{grid-template-columns:repeat(2,1fr)}.perfil-hero{align-items:flex-start;flex-direction:column}.impacto-total{width:90px;height:90px}}
+
+/* Portadas fotográficas añadidas para las secciones */
+.banner.portada-mercado{background-image:linear-gradient(90deg,#21172ddc,#21172d75),url('../img/referencias/venta-consola.jfif');background-position:center 45%;background-size:cover}
+.banner.portada-donar{background-image:linear-gradient(90deg,#17452cdd,#17452c70),url('../img/referencias/donacion-ropa.jfif');background-position:center 42%;background-size:cover}
+.banner.portada-comunidad{background-image:linear-gradient(90deg,#243b31dc,#243b3170),url('../img/referencias/lugar-comunidad.jfif');background-position:center 45%;background-size:cover}
+.banner.portada-reciclar{background-image:linear-gradient(90deg,#17452cdd,#17452c70),url('../img/referencias/reciclaje-vidrio.jfif');background-position:center;background-size:cover}
+.banner.portada-admin{background-image:linear-gradient(90deg,#243b31e8,#243b3180),url('../img/referencias/lugar-comunidad.jfif');background-position:center;background-size:cover}
+.banner.portada-publicar{background-image:linear-gradient(90deg,#3b2b5cdd,#3b2b5c70),url('../img/referencias/venta-licuadora.jfif');background-position:center;background-size:cover}
+@media(max-width:600px){.admin-card{padding:1rem}.admin-hero img{width:100px;height:100px}}
+
+/* ==========================================================
+   ESTILOS NUEVOS: PASAPORTE VERDE, ESTACIONES 4R Y QUIZ
+   ========================================================== */
+
+/* Barra de progreso global del Pasaporte Verde */
+.pasaporte-barra-flotante {
+  background: #ffffff;
+  border-bottom: 2px solid #d9e8db;
+  box-shadow: 0 4px 15px rgba(22, 60, 40, 0.06);
+  padding: 0.65rem 6vw;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.pasaporte-bar-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+.pasaporte-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.pasaporte-titulo {
+  font-weight: 750;
+  color: #1a4d36;
+  font-size: 0.95rem;
+}
+.pasaporte-progreso {
+  background: #e3f2e6;
+  color: #245b45;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+}
+.pasaporte-sellos-lista {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.sello-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: #f1f4f0;
+  color: #718477;
+  border: 1px solid #d8e2d8;
+  transition: all 0.25s ease;
+}
+.sello-chip.obtenido {
+  background: #d8f3dc;
+  color: #1b4d3e;
+  border-color: #95d5b2;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.15);
+}
+.sello-chip.obtenido .sello-check {
+  color: #2d6a4f;
+  font-weight: 800;
+}
+.pasaporte-link {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #286548;
+  text-decoration: none;
+  background: #fdf6e2;
+  padding: 0.35rem 0.8rem;
+  border-radius: 99px;
+  border: 1px solid #f2c65c;
+}
+.pasaporte-link:hover {
+  background: #fde8b0;
+}
+
+/* Notificación Flotante de Sello Desbloqueado */
+.notif-sello-toast {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #ffffff;
+  color: #1e3d2f;
+  padding: 1rem 1.3rem;
+  border-radius: 16px;
+  border-left: 6px solid #40916c;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 99999;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.notif-sello-toast.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+.sello-icono-anim {
+  font-size: 2.3rem;
+  animation: bounceSello 0.8s ease infinite alternate;
+}
+@keyframes bounceSello {
+  from { transform: scale(1); }
+  to { transform: scale(1.15) rotate(6deg); }
+}
+
+/* Portada y Navegación de la Ruta 4 R */
+.portada-aprende {
+  max-width: 820px;
+  margin: 1.2rem 0;
+}
+.ruta-resumen-nav {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+.nav-estacion-chip {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.55rem 1rem;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: background 0.2s;
+}
+.nav-estacion-chip:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.badge-sello-pill {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+}
+.badge-sello-pill.completado {
+  background: #38b000;
+  color: #fff;
+}
+
+/* Jerarquía ecológica pirámide */
+.tarjeta-info-jerarquia {
+  background: #ffffff;
+  border: 1px solid #dce8dc;
+  border-radius: 20px;
+  padding: 1.8rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 25px rgba(23, 61, 42, 0.04);
+}
+.piramide-indicador {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.p-nivel {
+  display: block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.84rem;
+  text-align: center;
+}
+.p-nivel.n1 { background: #b7e4c7; color: #1b4332; width: 100%; border-left: 5px solid #2d6a4f; }
+.p-nivel.n2 { background: #d8f3dc; color: #2d6a4f; width: 92%; margin: 0 auto; border-left: 5px solid #40916c; }
+.p-nivel.n3 { background: #ffe6a5; color: #664d03; width: 84%; margin: 0 auto; border-left: 5px solid #d4a373; }
+.p-nivel.n4 { background: #e2eafc; color: #1d3557; width: 76%; margin: 0 auto; border-left: 5px solid #457b9d; }
+
+/* Estructura de Secciones de Estación */
+.seccion-estacion {
+  margin: 3.5rem 0;
+  padding-top: 1rem;
+}
+.estacion-header {
+  margin-bottom: 1.5rem;
+}
+.estacion-tag {
+  color: #387b59;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.estacion-header h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+  margin: 0.3rem 0;
+  color: #17422f;
+}
+.estacion-header p {
+  color: #556c5e;
+  max-width: 65ch;
+  margin: 0;
+}
+
+/* Estación 1: Escenarios de Rechazar */
+.escenario-box {
+  background: #ffffff;
+  border: 1px solid #dce8dc;
+  border-radius: 22px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(22, 60, 40, 0.05);
+}
+.escenario-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.escenario-situacion {
+  font-size: 1.1rem;
+  color: #21352a;
+}
+.escenario-objeto-destacado {
+  background: #f6fbf7;
+  border: 2px dashed #b7e4c7;
+  border-radius: 14px;
+  padding: 1.2rem;
+  margin: 1.2rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a4332;
+  text-align: center;
+}
+.opciones-rechazo {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.btn-opcion-rechazo {
+  width: 100%;
+  text-align: left;
+  background: #f8faf8;
+  color: #1e392b;
+  border: 2px solid #e1e9e2;
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn-opcion-rechazo:hover:not(:disabled) {
+  background: #eaf5ed;
+  border-color: #387b59;
+  transform: translateY(-2px);
+}
+.feedback-caja {
+  padding: 1.1rem 1.3rem;
+  border-radius: 14px;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+.feedback-caja.exito {
+  background: #d8f3dc;
+  border: 1px solid #74c69d;
+  color: #1b4332;
+}
+.feedback-caja.fallo {
+  background: #fde8e8;
+  border: 1px solid #f8b4b4;
+  color: #9b1c1c;
+}
+.feedback-caja p {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+}
+.estacion-finalizada-card {
+  text-align: center;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, #ffffff, #eef7f0);
+  border: 2px solid #b7e4c7;
+  border-radius: 22px;
+}
+.sello-ganado-badge {
+  display: inline-block;
+  background: #2d6a4f;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 0.8rem;
+}
+
+/* Estación 2: Calculadora de Huella y Retos */
+.calculadora-huella-card {
+  background: #ffffff;
+  border: 1px solid #dce8dc;
+  border-radius: 22px;
+  padding: 2.2rem;
+  box-shadow: 0 10px 30px rgba(22, 60, 40, 0.05);
+}
+.sliders-huella-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.slider-item {
+  background: #f8faf8;
+  border: 1px solid #e5ede6;
+  border-radius: 14px;
+  padding: 1.1rem;
+}
+.slider-item label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #213d2f;
+  margin-bottom: 0.6rem;
+}
+.slider-item input[type="range"] {
+  width: 100%;
+  accent-color: #2e7653;
+  cursor: pointer;
+}
+.huella-resultados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+.res-item {
+  background: linear-gradient(135deg, #eef6ef, #e3eee5);
+  border: 1px solid #d4e5d6;
+  border-radius: 16px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.res-item small {
+  display: block;
+  color: #556c5e;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+.res-item strong {
+  display: block;
+  font-size: 1.45rem;
+  color: #17422f;
+  margin-top: 0.4rem;
+}
+.tarjeta-compromiso {
+  background: #fffdf5;
+  border: 2px solid #f2c65c;
+  border-radius: 18px;
+  padding: 1.6rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(242, 198, 92, 0.15);
+}
+.tarjeta-compromiso .texto-reto {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #284c37;
+  margin: 0.8rem 0;
+}
+
+/* Estación 3: Taller de Upcycling */
+.upcycling-nav-tabs {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+.tab-material {
+  background: #ffffff;
+  color: #286548;
+  border: 2px solid #dce8dc;
+  border-radius: 99px;
+  padding: 0.55rem 1.3rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tab-material.activo, .tab-material:hover {
+  background: #286548;
+  color: #ffffff;
+  border-color: #286548;
+}
+.diy-proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.2rem;
+}
+.tarjeta-diy {
+  background: #ffffff;
+  border: 1px solid #dce8dc;
+  border-radius: 18px;
+  padding: 1.4rem;
+  box-shadow: 0 6px 20px rgba(22, 60, 40, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.diy-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+.diy-head h4 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #1a4332;
+}
+.dificultad-tag {
+  background: #eef6ee;
+  color: #2d6a4f;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+.diy-pasos {
+  font-size: 0.92rem;
+  color: #4b6153;
+  line-height: 1.6;
+}
+.diy-impacto {
+  background: #f6fbf7;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.84rem;
+  color: #286548;
+  margin-top: 0.8rem;
+}
+.taller-acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+
+/* Estación 4: Clasificador Veloz (Minijuego) */
+.clasificador-card {
+  background: #ffffff;
+  border: 1px solid #dce8dc;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(22, 60, 40, 0.06);
+  overflow: hidden;
+}
+.clasificador-status {
+  padding: 0.8rem 1.5rem;
+  background: #f1f7f2;
+  font-weight: 700;
+  color: #286548;
+  border-bottom: 1px solid #e1ece2;
+}
+.objeto-a-clasificar-box {
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+}
+.ico-gigante {
+  font-size: 4.5rem;
+  display: inline-block;
+  animation: floatItem 2s ease-in-out infinite;
+}
+@keyframes floatItem {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.objeto-a-clasificar-box h3 {
+  font-size: 1.5rem;
+  color: #1a4332;
+  margin: 0.6rem 0 0.3rem;
+}
+.tachos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.8rem;
+  padding: 0 1.5rem 1.8rem;
+}
+.btn-tacho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 0.5rem;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-tacho:hover:not(:disabled) {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.tacho-ico {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+.btn-tacho b {
+  font-size: 0.95rem;
+}
+.btn-tacho small {
+  font-size: 0.72rem;
+  text-align: center;
+  opacity: 0.9;
+  margin-top: 0.2rem;
+}
+.tacho-amarillo { background: #fff3cd; color: #856404; border-color: #ffeeba; }
+.tacho-azul     { background: #cfe2ff; color: #084298; border-color: #b6d4fe; }
+.tacho-verde    { background: #d1e7dd; color: #0f5132; border-color: #badbcc; }
+.tacho-marron   { background: #eddcd2; color: #6c584c; border-color: #ddb892; }
+.tacho-gris     { background: #e9ecef; color: #495057; border-color: #ced4da; }
+
+/* Banner de Cierre */
+.banner-cierre-aprende {
+  background: linear-gradient(135deg, #1d4d38, #2a7251);
+  color: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+  margin-top: 4rem;
+  box-shadow: 0 16px 40px rgba(23, 61, 42, 0.15);
+}
+.banner-cierre-aprende h2 {
+  color: #ffffff;
+}
+.banner-cierre-aprende p {
+  color: #e4f5ea;
+  max-width: 60ch;
+  margin: 0.6rem auto 0;
+}
+
+/* Calculadora de Equivalencias en reciclar.html */
+.tarjeta-simulador-equiv {
+  background: #ffffff;
+  border: 1px solid #dce8dc;
+  border-radius: 24px;
+  padding: 2.2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 30px rgba(22, 60, 40, 0.05);
+}
+.simulador-controles {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  background: #f7faf7;
+  padding: 1.2rem;
+  border-radius: 18px;
+  margin: 1.5rem 0;
+}
+.control-box {
+  flex: 1 1 240px;
+}
+.control-box label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #213d2f;
+  font-size: 0.92rem;
+}
+.btn-preset {
+  background: #ffffff;
+  border: 1px solid #ccd9ce;
+  color: #286548;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.btn-preset:hover {
+  background: #eaf3eb;
+}
+.equiv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+.equiv-card {
+  background: linear-gradient(135deg, #ffffff, #f4faf5);
+  border: 1px solid #dce8dc;
+  border-radius: 18px;
+  padding: 1.3rem;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(22, 60, 40, 0.03);
+}
+.equiv-icon {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.equiv-val {
+  display: block;
+  font-size: 1.5rem;
+  color: #1b4d3e;
+}
+.equiv-card small {
+  color: #637668;
+  font-size: 0.84rem;
+}
+.tarjeta-regla-oro {
+  background: #fdfaf0;
+  border: 1px solid #f2e2be;
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+/* Quiz Paso a Paso y Credencial Oficial */
+.quiz-status-header {
+  margin-bottom: 1.8rem;
+}
+.pregunta-step-box {
+  background: #ffffff;
+  border: 1px solid #dce8dc;
+  border-radius: 22px;
+  padding: 2.2rem;
+  box-shadow: 0 10px 30px rgba(22, 60, 40, 0.05);
+}
+.pregunta-enunciado {
+  font-size: 1.35rem;
+  color: #17422f;
+  margin: 0 0 1.5rem;
+}
+.quiz-opciones-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+.btn-quiz-opcion {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  text-align: left;
+  background: #f8faf8;
+  color: #1f392c;
+  border: 2px solid #e1e9e2;
+  border-radius: 16px;
+  padding: 1rem 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-quiz-opcion:hover:not(:disabled) {
+  background: #eaf5ed;
+  border-color: #387b59;
+  transform: translateX(4px);
+}
+.btn-quiz-opcion.bien {
+  background: #d8f3dc !important;
+  border-color: #52b788 !important;
+  color: #1b4332 !important;
+}
+.btn-quiz-opcion.mal {
+  background: #fde8e8 !important;
+  border-color: #f8b4b4 !important;
+  color: #9b1c1c !important;
+}
+.letra-circulo {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e1ede3;
+  color: #245b45;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* Certificado / Credencial Oficial */
+.pantalla-fin-quiz-card {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.form-cert-box {
+  max-width: 580px;
+  margin: 1.5rem auto;
+  background: #ffffff;
+  border: 1px solid #dce8dc;
+  border-radius: 18px;
+  padding: 1.4rem;
+}
+.certificado-ecociudadano {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.8rem;
+  max-width: 820px;
+  margin: 2rem auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+.cert-borde-decorativo {
+  border: 4px double #245b45;
+  border-radius: 14px;
+  padding: 2.2rem 1.8rem;
+  background: radial-gradient(circle at center, #ffffff 60%, #f9fbf8 100%);
+}
+.cert-escuela {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #2e7653;
+  letter-spacing: 0.12em;
+}
+.cert-encabezado h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  letter-spacing: 0.04em;
+  margin: 0.4rem 0 0.2rem;
+  color: #133927;
+}
+.cert-cuerpo {
+  margin: 1.6rem 0;
+}
+.cert-titular {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: #1b4d3e;
+  text-decoration: underline;
+  text-decoration-color: #e9b949;
+  text-underline-offset: 8px;
+  margin: 0.8rem 0;
+}
+.cert-nivel-tag {
+  display: inline-block;
+  background: #d8f3dc;
+  color: #1b4332;
+  font-size: 1.3rem;
+  font-weight: 800;
+  padding: 0.4rem 1.4rem;
+  border-radius: 99px;
+  border: 2px solid #74c69d;
+  margin-top: 0.4rem;
+}
+.cert-sellos-contenedor {
+  margin: 1.8rem 0;
+  padding: 1.2rem;
+  background: #f7faf7;
+  border-radius: 14px;
+  border: 1px dashed #b7e4c7;
+}
+.cert-sellos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+.cert-sello-item {
+  background: #ffffff;
+  border: 1px solid #dce8dc;
+  border-radius: 12px;
+  padding: 0.6rem 0.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cert-sello-item.obtenido {
+  border-color: #52b788;
+  background: #eef9f1;
+}
+.cert-sello-ico {
+  font-size: 1.6rem;
+}
+.cert-pie {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+}
+.cert-firma-linea {
+  display: block;
+  width: 170px;
+  border-top: 2px solid #5a6e60;
+  margin-bottom: 0.4rem;
+}
+
+@media print {
+  body * { visibility: hidden; }
+  .certificado-ecociudadano, .certificado-ecociudadano * { visibility: visible; }
+  .certificado-ecociudadano {
+    position: absolute;
+    inset: 0;
+    margin: 0 auto;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+  }
+}
+@media (max-width: 650px) {
+  .tarjeta-info-jerarquia { grid-template-columns: 1fr; }
+  .cert-sellos-grid { grid-template-columns: repeat(2, 1fr); }
+  .cert-pie { flex-direction: column; gap: 1.5rem; align-items: center; }
+}
+

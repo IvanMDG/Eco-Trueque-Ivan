@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruta Interactiva de las 4 R · Eco-Trueque</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="banner ondas">
+    <nav id="menu"></nav>
+    <div class="portada-aprende">
+      <span class="mini-etiqueta" style="background:#f2c65c;color:#263b2e">Laboratorio Escolar de Educación Ambiental</span>
+      <h1>La Ruta Interactiva de las 4 R</h1>
+      <p>Aprende haciendo: supera los desafíos de cada estación, desbloquea tus 4 sellos ecológicos y gana tu credencial de Eco-Ciudadanía.</p>
+      <div class="ruta-resumen-nav">
+        <a href="#estacion-rechazar" class="nav-estacion-chip">
+          <span>1. Rechazar</span>
+          <b id="badge-estacion-rechazar" class="badge-sello-pill">Pendiente</b>
+        </a>
+        <a href="#estacion-reducir" class="nav-estacion-chip">
+          <span>2. Reducir</span>
+          <b id="badge-estacion-reducir" class="badge-sello-pill">Pendiente</b>
+        </a>
+        <a href="#estacion-reutilizar" class="nav-estacion-chip">
+          <span>3. Reutilizar</span>
+          <b id="badge-estacion-reutilizar" class="badge-sello-pill">Pendiente</b>
+        </a>
+        <a href="#estacion-reciclar" class="nav-estacion-chip">
+          <span>4. Reciclar</span>
+          <b id="badge-estacion-reciclar" class="badge-sello-pill">Pendiente</b>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- JERARQUÍA ECOLÓGICA -->
+    <section class="tarjeta-info-jerarquia">
+      <div>
+        <h3>¿Por qué este orden? (La Jerarquía de Impacto)</h3>
+        <p>En educación ambiental, <b>el mejor residuo es el que nunca se genera</b>. Por eso <b>Rechazar</b> y <b>Reducir</b> van primero. Si ya tienes un objeto, <b>Reutilízalo</b>. Y solo como último recurso, <b>Recicla</b>, pues transformar materiales gasta energía y agua.</p>
+      </div>
+      <div class="piramide-indicador">
+        <span class="p-nivel n1">1º Rechazar (Máximo Impacto)</span>
+        <span class="p-nivel n2">2º Reducir</span>
+        <span class="p-nivel n3">3º Reutilizar</span>
+        <span class="p-nivel n4">4º Reciclar (Último recurso)</span>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 1: RECHAZAR -->
+    <section id="estacion-rechazar" class="seccion-estacion">
+      <div class="estacion-header">
+        <div class="estacion-tag">ESTACIÓN 1 · MÁXIMO IMPACTO</div>
+        <h2>🛡️ Rechazar: El Escudo Anti-Desperdicio</h2>
+        <p>Aprende a decir "no" amablemente a lo que no necesitas antes de que entre a tu vida y termine en la basura.</p>
+      </div>
+      <div id="contenedor-escenario-rechazar"></div>
+    </section>
+
+    <!-- ESTACIÓN 2: REDUCIR -->
+    <section id="estacion-reducir" class="seccion-estacion">
+      <div class="estacion-header">
+        <div class="estacion-tag">ESTACIÓN 2 · CONSUMO CONSCIENTE</div>
+        <h2>📉 Reducir: Calculadora de Huella y Retos</h2>
+        <p>Mueve los controles según tus hábitos semanales aproximados para calcular tu impacto anual y generar un compromiso personal.</p>
+      </div>
+      <div class="calculadora-huella-card">
+        <div class="sliders-huella-grid">
+          <div class="slider-item">
+            <label for="sl-botellas">🧴 Botellas de agua/refresco desechables: <b id="val-botellas">3</b> por semana</label>
+            <input type="range" id="sl-botellas" min="0" max="15" value="3">
+          </div>
+          <div class="slider-item">
+            <label for="sl-bolsas">🛍️ Bolsas plásticas recibidas en tiendas: <b id="val-bolsas">5</b> por semana</label>
+            <input type="range" id="sl-bolsas" min="0" max="25" value="5">
+          </div>
+          <div class="slider-item">
+            <label for="sl-vasos">☕ Vasos desechables (café/refresco): <b id="val-vasos">2</b> por semana</label>
+            <input type="range" id="sl-vasos" min="0" max="12" value="2">
+          </div>
+          <div class="slider-item">
+            <label for="sl-hojas">📄 Hojas de papel impresas innecesarias: <b id="val-hojas">10</b> por semana</label>
+            <input type="range" id="sl-hojas" min="0" max="50" value="10">
+          </div>
+        </div>
+
+        <div class="huella-resultados-grid">
+          <div class="res-item">
+            <small>Plásticos anuales generados</small>
+            <strong id="res-plastico-anual">...</strong>
+          </div>
+          <div class="res-item">
+            <small>Agua virtual utilizada</small>
+            <strong id="res-agua-anual">...</strong>
+          </div>
+          <div class="res-item">
+            <small>Huella de papel / árboles</small>
+            <strong id="res-arbol-anual">...</strong>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:1.5rem">
+          <button id="btn-crear-reto" class="boton sol">🎯 Aceptar mi Reto de Reducción y Ganar Sello</button>
+        </div>
+        <div id="caja-reto-generado" style="display:none;margin-top:1.5rem"></div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 3: REUTILIZAR -->
+    <section id="estacion-reutilizar" class="seccion-estacion">
+      <div class="estacion-header">
+        <div class="estacion-tag">ESTACIÓN 3 · SEGUNDA VIDA</div>
+        <h2>🔄 Reutilizar: Taller de Upcycling Creativo</h2>
+        <p>¿Tienes objetos viejos o en desuso? No los tires ni compres nuevos. Explora ideas prácticas para transformarlos en casa o compártelos en el trueque escolar.</p>
+      </div>
+
+      <div class="upcycling-nav-tabs">
+        <button class="tab-material activo" data-material="ropa">👕 Ropa vieja</button>
+        <button class="tab-material" data-material="frascos">🍯 Frascos de vidrio</button>
+        <button class="tab-material" data-material="carton">📦 Cajas de cartón</button>
+        <button class="tab-material" data-material="latas">🥫 Latas de aluminio</button>
+      </div>
+
+      <div id="proyectos-upcycling-grid" class="diy-proyectos-grid"></div>
+
+      <div class="taller-acciones">
+        <button id="btn-sello-reutilizar" class="boton claro">⭐ Desbloquear Sello de Reutilización</button>
+        <a href="mercado.html" class="boton sol">Ir al Trueque Solidario →</a>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 4: RECICLAR -->
+    <section id="estacion-reciclar" class="seccion-estacion">
+      <div class="estacion-header">
+        <div class="estacion-tag">ESTACIÓN 4 · CLASIFICACIÓN CORRECTA</div>
+        <h2>♻️ Reciclar: El Clasificador Veloz</h2>
+        <p>Poner la basura en el lugar equivocado puede arruinar toneladas de reciclaje. ¡Demuestra que sabes a qué contenedor va cada residuo!</p>
+      </div>
+
+      <div class="clasificador-card">
+        <!-- PANTALLA INICIO -->
+        <div id="pantalla-inicio-recicla" style="text-align:center;padding:2rem">
+          <span style="font-size:3.5rem">🎮</span>
+          <h3>¿Listo para el desafío de clasificación?</h3>
+          <p>Aprenderás a evitar errores comunes (como cajas con comida o plástico sucio).</p>
+          <button id="btn-iniciar-clasificador" class="boton sol" style="font-size:1.1rem;padding:.8rem 2rem">¡Comenzar Desafío!</button>
+        </div>
+
+        <!-- ARENA DE JUEGO -->
+        <div id="arena-clasificador" style="display:none">
+          <div class="clasificador-status">
+            <span id="contador-clasificador">Objeto 1 de 6</span>
+          </div>
+
+          <div class="objeto-a-clasificar-box">
+            <span id="ico-residuo-actual" class="ico-gigante">🧴</span>
+            <h3 id="nombre-residuo-actual">Nombre del objeto</h3>
+            <p>¿En qué contenedor lo depositas?</p>
+          </div>
+
+          <div class="tachos-grid">
+            <button class="btn-tacho tacho-amarillo" data-color="amarillo">
+              <span class="tacho-ico">🟡</span>
+              <b>Amarillo</b>
+              <small>Plásticos y Latas</small>
+            </button>
+            <button class="btn-tacho tacho-azul" data-color="azul">
+              <span class="tacho-ico">🔵</span>
+              <b>Azul</b>
+              <small>Papel y Cartón Limpio</small>
+            </button>
+            <button class="btn-tacho tacho-verde" data-color="verde">
+              <span class="tacho-ico">🟢</span>
+              <b>Verde</b>
+              <small>Vidrio</small>
+            </button>
+            <button class="btn-tacho tacho-marron" data-color="organico">
+              <span class="tacho-ico">🟤</span>
+              <b>Marrón</b>
+              <small>Orgánico / Compost</small>
+            </button>
+            <button class="btn-tacho tacho-gris" data-color="resto">
+              <span class="tacho-ico">⚫</span>
+              <b>Gris / Resto</b>
+              <small>No reciclable / Sucio</small>
+            </button>
+          </div>
+
+          <div id="feedback-tacho" class="feedback-caja" style="display:none;margin-top:1.2rem"></div>
+        </div>
+
+        <!-- PANTALLA FIN -->
+        <div id="pantalla-fin-recicla" style="display:none;text-align:center;padding:2rem">
+          <div id="resumen-recicla"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE CIERRE Y ACCIÓN -->
+    <section class="banner-cierre-aprende">
+      <h2>¡Demuestra lo aprendido y certifícate!</h2>
+      <p>Si ya recorriste las 4 estaciones y tienes tus sellos, pon a prueba tus conocimientos en el quiz oficial y descarga tu Certificado de Eco-Ciudadanía.</p>
+      <div style="margin-top:1.2rem">
+        <a class="boton sol" href="quiz.html" style="font-size:1.1rem;padding:.75rem 1.6rem">Ir al Quiz de Evaluación →</a>
+        <a class="boton claro" href="reciclar.html" style="margin-left:.6rem">Ver Calculadora de Equivalencias</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="pie"></footer>
+  <script src="js/comun.js"></script>
+  <script src="js/aprende.js"></script>
+</body>
+</html>
+

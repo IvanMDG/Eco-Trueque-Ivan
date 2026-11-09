@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz de las 4 R · Eco-Trueque</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="banner">
+    <nav id="menu"></nav>
+    <div class="portada-aprende">
+      <span class="mini-etiqueta" style="background:#f2c65c;color:#263b2e">Evaluación y Certificación</span>
+      <h1>Quiz Oficial de Eco-Ciudadanía</h1>
+      <p>Ponte a prueba con situaciones reales sobre Rechazar, Reducir, Reutilizar y Reciclar. Al finalizar, genera tu credencial oficial con tus sellos.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- BARRA DE AVANCE DINÁMICA -->
+    <div class="quiz-status-header">
+      <div class="avance"><i id="barra"></i></div>
+      <div style="display:flex;justify-content:space-between;margin-top:.4rem;font-size:.9rem;color:#496152">
+        <span id="progreso">Pregunta 1 de 10</span>
+        <span id="marcador-en-vivo">Puntaje: <b>0</b> pts</span>
+      </div>
+    </div>
+
+    <!-- TARJETA DE PREGUNTA INTERACTIVA -->
+    <div id="contenedor-pregunta" class="quiz-card-step"></div>
+
+    <!-- PANTALLA FINAL Y CERTIFICADO -->
+    <div id="final" hidden>
+      <div class="pantalla-fin-quiz-card">
+        <div id="icono-fin" style="font-size:3.5rem">🏆</div>
+        <h2 id="resultado"></h2>
+        <p id="subtitulo-resultado" style="max-width:60ch;margin:.5rem auto 1.5rem;color:#5a6e60"></p>
+
+        <div class="form-cert-box">
+          <label for="nombre" style="font-weight:600;display:block;margin-bottom:.4rem">Escribe tu nombre completo para emitir tu certificado:</label>
+          <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+            <input id="nombre" placeholder="Ej: Marcela López" style="flex:1 1 240px">
+            <button id="crear" class="boton sol">Generar mi Credencial Oficial</button>
+          </div>
+        </div>
+
+        <!-- CREDENCIAL / CERTIFICADO IMPRIMIBLE -->
+        <div id="certificado" class="certificado-ecociudadano" hidden>
+          <div class="cert-borde-decorativo">
+            <div class="cert-encabezado">
+              <span class="cert-escuela">ECO-TRUEQUE · EDUCACIÓN AMBIENTAL Y LAS 4 R</span>
+              <h2>CREDENTIAL DE ECO-CIUDADANÍA</h2>
+              <small>Reconocimiento a las buenas prácticas de consumo consciente y sostenibilidad</small>
+            </div>
+
+            <div class="cert-cuerpo">
+              <p>Por haber demostrado compromiso ecológico y completado satisfactoriamente la evaluación de las 4 R, se otorga esta distinción a:</p>
+              <h1 id="cert-nombre" class="cert-titular">Nombre del Alumno</h1>
+              <p>con un puntaje destacado de <strong id="cert-puntos"></strong> y alcanzando el rango ambiental:</p>
+              <div id="cert-nivel" class="cert-nivel-tag">Bosque Protector 🌳</div>
+            </div>
+
+            <!-- SELLOS INTEGRADOS EN EL CERTIFICADO -->
+            <div class="cert-sellos-contenedor">
+              <span style="font-size:.8rem;font-weight:700;letter-spacing:.08em;color:#245b45;text-transform:uppercase">Sellos Oficiales de la Ruta de las 4 R</span>
+              <div id="cert-sellos-grid" class="cert-sellos-grid"></div>
+            </div>
+
+            <div class="cert-pie">
+              <div>
+                <span class="cert-firma-linea"></span>
+                <small>Comité de Educación Ambiental</small>
+              </div>
+              <div>
+                <span class="cert-firma-linea"></span>
+                <small>Eco-Trueque Escolar</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.5rem">
+          <button id="imprimir" class="boton sol" hidden>🖨️ Imprimir o Guardar como PDF</button>
+          <button id="reiniciar" class="boton claro">Volver a Intentar el Quiz</button>
+          <a class="boton claro" href="aprende.html" style="margin-left:.4rem">Volver a la Ruta 4 R</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="pie"></footer>
+  <script src="js/comun.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
+

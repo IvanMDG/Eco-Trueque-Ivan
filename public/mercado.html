@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tienda · Eco-Trueque</title><link rel="stylesheet" href="css/estilos.css"></head>
+<body>
+<header class="banner portada-mercado"><nav id="menu"></nav><h1>La tienda de la comunidad</h1><p>Mira lo que otras personas intercambian, venden o donan. Toca un producto para ver el detalle.</p></header>
+<main>
+<div style="background:#e8f1e7;border:1px solid #d8e7d8;padding:1rem 1.2rem;border-radius:16px;margin-bottom:1.2rem">
+<strong style="color:#286548">Un mercado para compartir, no para desperdiciar.</strong>
+<p style="margin:.25rem 0 0;color:#536c5b">Explora objetos que pueden intercambiarse, venderse o donarse. Selecciona una tarjeta para conocer los detalles y contactar a quien publica.</p>
+</div>
+<p style="font-size:.84rem;color:#728477">ℹ️ Las publicaciones y perfiles precargados son datos ficticios de demostración.</p>
+<div id="aviso" class="toast" hidden>¡Tu publicación ya está en la tienda! 🎉</div>
+<div class="tabs" id="tabs">
+  <button data-tipo="" class="on">Todo</button><button data-tipo="trueque">Intercambio</button>
+  <button data-tipo="venta">Venta</button><button data-tipo="donacion">Donación</button><button data-tipo="fav">♥ Mis favoritos</button>
+</div>
+<div class="filtros"><input id="q" placeholder="Buscar en la tienda">
+  <select id="fcat"></select>
+  <select id="orden"><option value="">Más recientes</option><option value="precio_asc">Precio: menor a mayor</option><option value="precio_desc">Precio: mayor a menor</option></select>
+  <a class="boton sol" href="publicar.html">Publicar un objeto</a></div>
+<p id="chip"></p><p id="contador"></p>
+<div id="lista" class="tienda"></div>
+</main>
+<div id="modal" class="modal" hidden><div class="modal-caja" id="modal-caja"></div></div>
+<footer id="pie"></footer><script src="js/comun.js"></script><script src="js/mercado.js"></script></body></html>

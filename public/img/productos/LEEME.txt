@@ -1,0 +1,21 @@
+FOTOS DE LA TIENDA
+Guarda aquí fotos reales con estos nombres exactos (formato .jpg). Si falta alguna, la tienda muestra una ilustración.
+
+mochila.jpg            Mochila escolar
+libros-matematica.jpg  Libros de matemática
+bicicleta.jpg          Bicicleta infantil
+ropa-nino.jpg          Ropa de niño
+cuadernos.jpg          Cuadernos
+macetas.jpg            Macetas con plantas
+licuadora.jpg          Licuadora
+juguetes-madera.jpg    Juguetes de madera
+vestido.jpg            Vestido de fiesta
+novelas.jpg            Novelas juveniles
+geometria.jpg          Set de geometría
+peluches.jpg           Peluches
+lampara.jpg            Lámpara de mesa
+albahaca.jpg           Plantas de albahaca
+abrigo.jpg             Abrigo de niña
+calculadora.jpg        Calculadora científica
+
+Las publicaciones nuevas que se hagan con foto desde la página se guardan solas en esta carpeta.
